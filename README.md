@@ -12,7 +12,7 @@ Continuous integration testing for the Northern Bites' robotic soccer system.
 - RVM is reccommended
 
 
-vagrant box add saucy http://cloud-images.ubuntu.com/vagrant/saucy/current/saucy-server-cloudimg-i386-vagrant-disk1.box
-vagrant init saucy
+vagrant box add precise http://files.vagrantup.com/precise32.box
+vagrant init precise
 vagrant up
 vagrant destroy

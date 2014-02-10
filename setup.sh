@@ -11,7 +11,7 @@ git clone https://github.com/northern-bites/nbites.git ~/nbites
 # remove these once my PR is pulled
 git --git-dir=/home/vagrant/nbites/.git --work-tree=/home/vagrant/nbites remote add bjacobel https://github.com/bjacobel/nbites.git
 git --git-dir=/home/vagrant/nbites/.git --work-tree=/home/vagrant/nbites remote update
-git --git-dir=/home/vagrant/nbites/.git --work-tree=/home/vagrant/nbites checkout -t bjacobel/ubuntu13.10
+git --git-dir=/home/vagrant/nbites/.git --work-tree=/home/vagrant/nbites checkout -t bjacobel/serenity
 
 printf "\n\033[31mRunning linux_setup.sh... \n\033[0m"
 #~/nbites/util/scripts/linux_setup.sh 1.14.3
