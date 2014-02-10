@@ -1,4 +1,3 @@
 source 'https://rubygems.org'
 
-gem "github_api"
-gem "excon"
+gem "octokit", "~> 2.0"
