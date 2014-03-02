@@ -35,9 +35,6 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.2'
 
-# For Github API access
-gem "octokit", "~> 2.0"
-
 # For Github authentication/authorization
 gem 'warden-github-rails', '~> 1.1.0'
 
