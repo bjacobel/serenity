@@ -41,6 +41,9 @@ gem "octokit", "~> 2.0"
 # For Github authentication/authorization
 gem 'warden-github-rails', '~> 1.1.0'
 
+# Figaro makes environment variables less of a PITA
+gem 'figaro'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
