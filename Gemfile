@@ -41,6 +41,9 @@ gem 'warden-github-rails', '~> 1.1.0'
 # Figaro makes environment variables less of a PITA
 gem 'figaro'
 
+# ERB is boring and HAML is slow
+gem "slim"
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
