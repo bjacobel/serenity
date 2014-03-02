@@ -8,7 +8,9 @@ Continuous integration testing for the Northern Bites' robotic soccer system.
 - Bundler >= 1.5
 - Vagrant >= 1.4.3
 - VirtualBox >= 4.1.12
-- Postgres with role `serenity`
+- Postgresql >= 9.1.12
+    - Ubuntu: `apt-get install postgresql libpq-dev`
+    - OSX: (Postgres.app)[http://postgresapp.com]
 - All gems specified in the Gemfile (`bundle install`)
 
 
