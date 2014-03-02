@@ -134,7 +134,6 @@ DEPENDENCIES
   figaro
   jbuilder (~> 1.2)
   jquery-rails
-  octokit (~> 2.0)
   pg (= 0.17.1)
   rails (= 4.0.2)
   sass-rails (~> 4.0.0)
