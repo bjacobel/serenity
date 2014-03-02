@@ -3,6 +3,7 @@ development:
   encoding: unicode
   database: serenity_development
   pool: 5
+  host: localhost
   username: serenity
   password: 53r3n1ty
   timeout: 5000
@@ -12,6 +13,7 @@ test:
   encoding: unicode
   database: serenity_test
   pool: 5
+  host: localhost
   username: serenity
   password: 53r3n1ty
   timeout: 5000
@@ -21,6 +23,7 @@ production:
   encoding: unicode
   database: serenity
   pool: 5
+  host: localhost
   username: serenity
   password: Figaro.env.postgres_password
   timeout: 5000
