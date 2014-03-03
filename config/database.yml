@@ -5,7 +5,6 @@ development:
   pool: 5
   host: localhost
   username: serenity
-  password: 53r3n1ty
   timeout: 5000
 
 test:
@@ -15,7 +14,6 @@ test:
   pool: 5
   host: localhost
   username: serenity
-  password: 53r3n1ty
   timeout: 5000
 
 production:
