@@ -11,19 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140302230458) do
+ActiveRecord::Schema.define(version: 20140303055022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "pull_requests", force: true do |t|
-    t.string   "creator"
-    t.datetime "created"
     t.integer  "github_id"
     t.string   "test_status"
     t.boolean  "passing"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.binary   "payload"
+    t.integer  "number"
+    t.string   "title"
+    t.integer  "creator_id"
+    t.string   "action"
+    t.string   "pr_status"
   end
 
 end

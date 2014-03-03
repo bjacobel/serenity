@@ -1,4 +1,9 @@
 Serenity::Application.routes.draw do
+  root 'pull_request#index'
+
+  post '/api/webhook.json', to: 'pull_request#new'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
