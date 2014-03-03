@@ -6,7 +6,7 @@ Serenity is a independent study project to enable, expand and encourage unit and
 This architecture is inspired heavily by [TravisCI](http://travisci.org) and other continuous integration suites, but I chose to implement from scratch rather than using one of these solutions in order to become familiar with Rails and AWS.  
 
 ####Requirements
-- Ruby == 2.0.0p247
+- Ruby == 2.0.0
 - Bundler >= 1.5
 - PostgreSQL >= 9.1.12
     - Ubuntu: `apt-get install postgresql libpq-dev`
@@ -15,12 +15,16 @@ This architecture is inspired heavily by [TravisCI](http://travisci.org) and oth
 
 
 ####Secrets
-- `application.yml.example` contains an example of the access keys and secrets you will need to configure. The real values are not included in this repository.   
+- `application.yml.example` contains an example of the access keys and secrets you will need to configure. The real values are not included in this repository.
 
-####Notes
-- best AMI to use looks like ami-a18c8fc8
+####Tests
+- Serenity is currently set up to test with Travis CI, but the eventual goal is to test Serenity with Serenity. The current build status is: [![Build Status](https://travis-ci.org/bjacobel/serenity.png)](https://travis-ci.org/bjacobel/serenity) 
+
+####Notes to self
+- Best AMI to use looks like ami-a18c8fc8
     - don't need EBS because we're going to build from scratch and destroy
     - investigate whether we can run this on t1.micro or need m1.small
-- I don't like the aws-post-boot.sh solution. better to do it like Travis does with (travis.yml)[http://docs.travis-ci.com/user/build-configuration/]
+    - will need the [aws-sdk-ruby](https://github.com/aws/aws-sdk-ruby) gem
+- I don't like aws-post-boot.sh, better to do it like Travis does with [.travis.yml](http://docs.travis-ci.com/user/build-configuration/)
 
 
