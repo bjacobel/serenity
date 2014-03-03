@@ -11,5 +11,4 @@ env:
       - secure: pO1asDbtGq0m4WglHP+it11xNIYba9cV532OgS9XU0KKyaEXslibYlgfxAY2TIcwmdM1acnvcpVG5DJ7CSf8jL29cOlV1xHck2eWRSH8s0fEZgBqje7nq6mWhyUfdlNJMONfp/lOeBrpd6GMdhU8Qz0hdjZlyV0K8cls3arYa5I=
       - secure: gsDzFuSayUS6ohwACiTHSGYVjCFPiIr7lUax8dZJe+xQerCqafKGsXzYc2lZTJURCWnNFhuY8h4kT/H5zBd2sTr8ifdOnkkGnSWj0fYbkrNuclLHpsDgfsDIiEoXJJSSVcbADpOJKKjfvMolyyaKCQX56ycorTeK0N+q065QQjc=
 before_script:
-    - su - postgres && psql -c 'createuser -s --no-password serenity'
     - psql -c 'create database serenity_test;' -U serenity
