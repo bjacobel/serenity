@@ -1,15 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  creator: MyString
-  created: 2014-03-02 18:04:58
-  github_id: 1
-  test_status: MyString
+  github_id: 13098008
+  test_status: running
   passing: false
-
-two:
-  creator: MyString
-  created: 2014-03-02 18:04:58
-  github_id: 1
-  test_status: MyString
-  passing: false
+  number: 618
+  title: "Solves Robocup"
+  creator_id: 1443719
+  action: opened
+  pr_status: open
+  payload:
