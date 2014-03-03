@@ -4,8 +4,7 @@ development:
   database: serenity_development
   pool: 5
   host: localhost
-  username: serenity
-  password: 53r3n1ty
+  username: postgres
   timeout: 5000
 
 test:
@@ -14,8 +13,7 @@ test:
   database: serenity_test
   pool: 5
   host: localhost
-  username: serenity
-  password: 53r3n1ty
+  username: postgres
   timeout: 5000
 
 production:
