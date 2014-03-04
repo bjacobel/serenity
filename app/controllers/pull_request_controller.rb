@@ -7,7 +7,15 @@ skip_before_filter :verify_authenticity_token, only: [:new]
 
   def new
     @pull = PullRequest.new
+    
     @pull.payload = params
+
+    @pull.github_id   = params['pull_request']['id']
+    @pull.number      = params['number']
+    @pull.creator_id  = params['sender']['id']
+    @pull.title       = params['pull_request']['title']
+    @pull.action      = params['action']
+
     @pull.save()
   end
 end
