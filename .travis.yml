@@ -1,7 +1,6 @@
 language: ruby
 rvm:
     - 2.0.0
-    - ruby-head
 env:
   global:
       - secure: RZM9lXnH2xqDSOYkU+Liv885w9rNB8YAFEYW6h+6WvHZzr4QATzzA0wHtPMiyQI11B/x0PpK13odqDcvU+q1VSmMkKya+FSIZHq6Vx4Ihi2bTq1wfRHjylKaujFJxe2+Cdl4FJitrGTTpU4SinQ/vPh30dAI4uGUAof9jzduUaY=
