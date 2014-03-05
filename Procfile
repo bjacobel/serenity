@@ -1,1 +1,1 @@
-web: foreman -f Foremanfile start
+web: foreman start -f Foremanfile
