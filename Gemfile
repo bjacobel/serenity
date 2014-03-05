@@ -31,6 +31,9 @@ gem 'jbuilder', '~> 1.2'
 # Use debugger
 gem 'debugger', group: [:development, :test]
 
+# Use the unicorn server in production (use `rails s` in dev/test)
+gem 'unicorn', group: :production
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -60,5 +63,8 @@ gem 'rails_12factor', group: :production
 gem 'newrelic_rpm', group: :production
 gem "mailgun"
 gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git", group: :production
+
+# Use foreman to run web and worker on the same Heroku dyno
+gem 'foreman', group: :production
 
 ruby '2.0.0'
