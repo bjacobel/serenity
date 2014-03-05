@@ -32,9 +32,6 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.2'
-
 # For Github authentication/authorization
 gem 'warden-github-rails', '~> 1.1.0'
 
@@ -43,6 +40,9 @@ gem 'figaro'
 
 # ERB is boring and HAML is slow
 gem "slim-rails"
+
+# Heroku would like this set. As I understand it it's kinda like vmware extras.
+gem 'rails_12factor', group: :production
 
 # Use unicorn as the app server
 # gem 'unicorn'
