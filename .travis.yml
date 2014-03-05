@@ -1,13 +1,13 @@
 language: ruby
 rvm:
-    - 2.0.0
+  - 2.0.0
 env:
   global:
-      - secure: RZM9lXnH2xqDSOYkU+Liv885w9rNB8YAFEYW6h+6WvHZzr4QATzzA0wHtPMiyQI11B/x0PpK13odqDcvU+q1VSmMkKya+FSIZHq6Vx4Ihi2bTq1wfRHjylKaujFJxe2+Cdl4FJitrGTTpU4SinQ/vPh30dAI4uGUAof9jzduUaY=
-      - secure: C4+ti8acwskRsiO/AWD56IrsI2Ce0lVgdlnFbKvHQ6lL/SqcmRcAJ8vOG2xIW0rM0LqPWbxHZ6NqVQnhe8QWZmgIwEsxwpmpuRZ/9H0WgxSHmJFo/1xgbjdXYlCp9fPHzOLp++71aYnUUcIlZr+QEcvlwhOZrlWLUW/3WweNZC0=
-      - secure: Jn0t9TAV6KzbSjZ/G/Ng0MNRHhhkAP3eEEC5pZIk9WbPU5jpMt91DRRQmBs6TwZd5urzbmPey+cNl8qzViH/PkPyKk4MQw0ShAzqEolNSoNyoZdJ6fMsgHakUdKulStXFBUEmDoteDZ9DihN4t/Psq1UAqypUgNNEI6lB/6Lz8w=
-      - secure: BtpwRhKtbjSG4esg8WKvHgVjpJ2sOVVrNwTY+y4hJb0dHICSfU+bT+SPLSC+rhcNalQG/6c4dH0USBYWgjRYuKN0NqnhFDS1vg9bneDqNMTiY1HEo54Ht3dNvVq2/N6WIKCxpGU8TmL3ahZPVgoB0hdqit0P3jQYPw+8fVdxPkM=
-      - secure: pO1asDbtGq0m4WglHP+it11xNIYba9cV532OgS9XU0KKyaEXslibYlgfxAY2TIcwmdM1acnvcpVG5DJ7CSf8jL29cOlV1xHck2eWRSH8s0fEZgBqje7nq6mWhyUfdlNJMONfp/lOeBrpd6GMdhU8Qz0hdjZlyV0K8cls3arYa5I=
-      - secure: gsDzFuSayUS6ohwACiTHSGYVjCFPiIr7lUax8dZJe+xQerCqafKGsXzYc2lZTJURCWnNFhuY8h4kT/H5zBd2sTr8ifdOnkkGnSWj0fYbkrNuclLHpsDgfsDIiEoXJJSSVcbADpOJKKjfvMolyyaKCQX56ycorTeK0N+q065QQjc=
+    - secure: RZM9lXnH2xqDSOYkU+Liv885w9rNB8YAFEYW6h+6WvHZzr4QATzzA0wHtPMiyQI11B/x0PpK13odqDcvU+q1VSmMkKya+FSIZHq6Vx4Ihi2bTq1wfRHjylKaujFJxe2+Cdl4FJitrGTTpU4SinQ/vPh30dAI4uGUAof9jzduUaY=
+    - secure: C4+ti8acwskRsiO/AWD56IrsI2Ce0lVgdlnFbKvHQ6lL/SqcmRcAJ8vOG2xIW0rM0LqPWbxHZ6NqVQnhe8QWZmgIwEsxwpmpuRZ/9H0WgxSHmJFo/1xgbjdXYlCp9fPHzOLp++71aYnUUcIlZr+QEcvlwhOZrlWLUW/3WweNZC0=
+    - secure: Jn0t9TAV6KzbSjZ/G/Ng0MNRHhhkAP3eEEC5pZIk9WbPU5jpMt91DRRQmBs6TwZd5urzbmPey+cNl8qzViH/PkPyKk4MQw0ShAzqEolNSoNyoZdJ6fMsgHakUdKulStXFBUEmDoteDZ9DihN4t/Psq1UAqypUgNNEI6lB/6Lz8w=
+    - secure: BtpwRhKtbjSG4esg8WKvHgVjpJ2sOVVrNwTY+y4hJb0dHICSfU+bT+SPLSC+rhcNalQG/6c4dH0USBYWgjRYuKN0NqnhFDS1vg9bneDqNMTiY1HEo54Ht3dNvVq2/N6WIKCxpGU8TmL3ahZPVgoB0hdqit0P3jQYPw+8fVdxPkM=
+    - secure: pO1asDbtGq0m4WglHP+it11xNIYba9cV532OgS9XU0KKyaEXslibYlgfxAY2TIcwmdM1acnvcpVG5DJ7CSf8jL29cOlV1xHck2eWRSH8s0fEZgBqje7nq6mWhyUfdlNJMONfp/lOeBrpd6GMdhU8Qz0hdjZlyV0K8cls3arYa5I=
+    - secure: gsDzFuSayUS6ohwACiTHSGYVjCFPiIr7lUax8dZJe+xQerCqafKGsXzYc2lZTJURCWnNFhuY8h4kT/H5zBd2sTr8ifdOnkkGnSWj0fYbkrNuclLHpsDgfsDIiEoXJJSSVcbADpOJKKjfvMolyyaKCQX56ycorTeK0N+q065QQjc=
 before_script:
-    - psql -c 'create database serenity_test;' -U postgres
+  - psql -c 'create database serenity_test;' -U postgres
