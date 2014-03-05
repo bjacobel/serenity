@@ -2,11 +2,8 @@
 
 one:
   github_id: 13098008
-  test_status: running
-  passing: false
   number: 618
   title: "Solves Robocup"
   creator_id: 1443719
-  action: opened
-  pr_status: open
+  action: "opened"
   payload:
