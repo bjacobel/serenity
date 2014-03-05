@@ -3,11 +3,14 @@ rvm:
     - 2.0.0
 env:
   global:
-      - secure: RZM9lXnH2xqDSOYkU+Liv885w9rNB8YAFEYW6h+6WvHZzr4QATzzA0wHtPMiyQI11B/x0PpK13odqDcvU+q1VSmMkKya+FSIZHq6Vx4Ihi2bTq1wfRHjylKaujFJxe2+Cdl4FJitrGTTpU4SinQ/vPh30dAI4uGUAof9jzduUaY=
-      - secure: C4+ti8acwskRsiO/AWD56IrsI2Ce0lVgdlnFbKvHQ6lL/SqcmRcAJ8vOG2xIW0rM0LqPWbxHZ6NqVQnhe8QWZmgIwEsxwpmpuRZ/9H0WgxSHmJFo/1xgbjdXYlCp9fPHzOLp++71aYnUUcIlZr+QEcvlwhOZrlWLUW/3WweNZC0=
-      - secure: Jn0t9TAV6KzbSjZ/G/Ng0MNRHhhkAP3eEEC5pZIk9WbPU5jpMt91DRRQmBs6TwZd5urzbmPey+cNl8qzViH/PkPyKk4MQw0ShAzqEolNSoNyoZdJ6fMsgHakUdKulStXFBUEmDoteDZ9DihN4t/Psq1UAqypUgNNEI6lB/6Lz8w=
-      - secure: BtpwRhKtbjSG4esg8WKvHgVjpJ2sOVVrNwTY+y4hJb0dHICSfU+bT+SPLSC+rhcNalQG/6c4dH0USBYWgjRYuKN0NqnhFDS1vg9bneDqNMTiY1HEo54Ht3dNvVq2/N6WIKCxpGU8TmL3ahZPVgoB0hdqit0P3jQYPw+8fVdxPkM=
-      - secure: pO1asDbtGq0m4WglHP+it11xNIYba9cV532OgS9XU0KKyaEXslibYlgfxAY2TIcwmdM1acnvcpVG5DJ7CSf8jL29cOlV1xHck2eWRSH8s0fEZgBqje7nq6mWhyUfdlNJMONfp/lOeBrpd6GMdhU8Qz0hdjZlyV0K8cls3arYa5I=
-      - secure: gsDzFuSayUS6ohwACiTHSGYVjCFPiIr7lUax8dZJe+xQerCqafKGsXzYc2lZTJURCWnNFhuY8h4kT/H5zBd2sTr8ifdOnkkGnSWj0fYbkrNuclLHpsDgfsDIiEoXJJSSVcbADpOJKKjfvMolyyaKCQX56ycorTeK0N+q065QQjc=
+      - secure: "oJKdkSY3525p01PrXeMwGenZ5aG7Lg947ALcfRf6tWLTI9Kx4wNfl2JRJz63D79FCiwIBPDtONJPyRPBH4z/Q74+YSMe9+dtzErvm0mVCMLJqywWiT70S04n1Tq5H5CO1FbBYf4GlmuX5fgr88Bcw9JtCVSLqxrVLxePWe/N6E4="  # secret key
+      - secure: "FWh1Las/VqdMeRKIC/n1aRvZke2NL5ySGLlLEVLgjM7l8obxoUEb/k12fvknzWJd3+vcoWsyR7hrUAIAuTSXMgbdBPfH4b7rFTr4zvUg3EvpBXe9UtReherii8EYLA0ZEoL51VRl2uKiFboF5YMERmJyMlXSgBVHbKFvES/P1gE="  # postgres
+      - secure: "A1ZqifoZX7+yO1d/PjinxrLT5SJ7VjwFcpgv0pwPRbguksgkrKQgt2yrwt7XYL11uN2p/dLZiR8t4IhmUH0zXeHRXlKdpIIrRhJpjOq1b3dERiIkgO1/o9lpBb9Kh3eKsI7ky1CTp8BgT/drhkJ2UbhIcuEGw8c6OXyTL6DGZ9M="  # github id
+      - secure: "iN4yYsDOqv/H98fP7I0KZyoQlw3Im9Q+nYKFUCPOwo5AXYyU1ykHGdPh8rzX0qCYbt6+vDujse4eEopz225GAge0OZTVBMSIvRd1Hea3hu5PH7PIgbMvWGM52dgHnvZL8bwOOqaFBycAQiftn627RLhGpsgvCt7G/+FeLuBpMYw="  # github secret
+      - secure: "kvj6zEbcMBcHTwSx+0BrENx5zbKzB/hTVrhisxfjWxHsjw4mM2otwMt56MHbLf0lPC5f2MqPAuJWy19Y5YkDqfZ8MHOGNHK4qbVsgz3VXQY7+M4kh+YjvH37L9JqNg/i5LzvILYf3C6PBGmGTfR3WwNjB4UxRB9LvD5+jGEyp3k="  # aws id
+      - secure: "sQtnnbgDRX9Oeo64FmLhQAr7yB+kMEuBTiBbt7JllpTdusgo6Gc8HXtf5O8LsFZopdOqjXloQtJWf3MUccVo5sYxs4tXRlh14UvsM9qCgjn8yrQjmGR/SuXosm3m4GqEIGJcq/d9tPDvkO/Xt1fMs43cPeOFI2zudhQdAiURif4="  # aws secret
+      - secure: "eKARzN/EI07qpGGqubFxoWrpl4vcs8jHXzC59b5uSyMuxxwfz3t8huWwsUWQ+JCZHod5u2sX1l+cFZD2DGUlUsr29bJyOJuACM9VeMTQqSFTNSjfemjFTAZsowIXtv0Jz5VBKQlE9G1zRoAgC3StUnkfhD+hAAt9CyRE3Ib8rTY="  # mailgun
+      - secure: "ty9yaFQ2dOib8XTNy8E/ZSMPsGSsD34GvCZzoUk7s+BD7pJnSzvKQhsHMSuoiimFMntADiNvgdTf4EEuCVNQ1EiVTAtVD/UTtyJncTSARynk5N/HfPBDAfJE1FTKIRS54liXAtUIK3tRhGS4p5SHN/YR0bRwloyUe/jTJp23ch0="  # sentry 1
+      - secure: "d34jNa7RrZCuF4nIRoZD6RqwclXM5kRkoQ+Omo7QXczOfbg4QJSTlDsePZbIQCqeHV+nHtDzAouCc7D/kLbsbixxMofOeJgVVN9U+fyKVNB0me4PH+7MhBy1Rkf7+RdmFKHi7yKBbfVk3WcoEl4rYL3f/VJ/b6Vf+Vn9DCQivC0="  # sentry 2
 before_script:
     - psql -c 'create database serenity_test;' -U postgres
