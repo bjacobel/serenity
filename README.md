@@ -24,7 +24,6 @@ This architecture is inspired heavily by [TravisCI](http://travisci.org) and oth
 - Best AMI to use looks like ami-a18c8fc8
     - don't need EBS because we're going to build from scratch and destroy
     - investigate whether we can run this on t1.micro or need m1.small
-    - will need the [aws-sdk-ruby](https://github.com/aws/aws-sdk-ruby) gem
 - I don't like aws-post-boot.sh, better to do it like Travis does with [.travis.yml](http://docs.travis-ci.com/user/build-configuration/)
 
 
