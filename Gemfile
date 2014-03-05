@@ -67,4 +67,7 @@ gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git", group
 # Use foreman to run web and worker on the same Heroku dyno
 gem 'foreman', group: :production
 
+# Set up a queue for delayed jobs
+gem 'delayed_job_active_record'
+
 ruby '2.0.0'
