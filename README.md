@@ -17,8 +17,8 @@ This architecture is inspired heavily by [TravisCI](http://travisci.org) and oth
 ####Secrets
 - `application.yml.example` contains an example of the access keys and secrets you will need to configure. The real values are not included in this repository.
 
-####Tests
-- Serenity is currently set up to test with Travis CI, but the eventual goal is to test Serenity with Serenity. The current build status is: [![Build Status](https://travis-ci.org/bjacobel/serenity.png)](https://travis-ci.org/bjacobel/serenity) 
+####Tests [![Build Status](https://travis-ci.org/bjacobel/serenity.png)](https://travis-ci.org/bjacobel/serenity) 
+- Serenity is currently set up to test with Travis CI, but the eventual goal is to test Serenity with Serenity. The build status is above. 
 
 ####Notes to self
 - Best AMI to use looks like ami-a18c8fc8
