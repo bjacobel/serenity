@@ -45,6 +45,9 @@ install:
 before_test:
   - wget -o http://robocup.bowdoin.edu/public/software/nao/NaoQi/1.14.3/naoqi-sdk-1.14.3-linux32.tar.gz
   - wget -o http://robocup.bowdoin.edu/public/software/nao/NaoQi/1.14.3/nbites-atom-toolchain-1.14.3.tar.gz
+  - git --git-dir=/home/ubuntu/nbites/.git --work-tree=/home/ubuntu/nbites remote add bjacobel https://github.com/bjacobel/nbites.git
+  - git --git-dir=/home/ubuntu/nbites/.git --work-tree=/home/ubuntu/nbites remote update
+  - git --git-dir=/home/ubuntu/nbites/.git --work-tree=/home/ubuntu/nbites checkout -t bjacobel/serenity
 
 
 # Test scripts or commands
