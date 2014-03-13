@@ -16,6 +16,7 @@ This architecture is inspired heavily by [TravisCI](http://travisci.org) and oth
 
 ####Secrets
 - `application.yml.example` contains an example of the access keys and secrets you will need to configure. The real values are not included in this repository.
+- To connect to Amazon, a [public/private keypair are required](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html). Serenity expects a key named `config/default.pem`. You can create and download a key from your AWS dashboard. 
 
 ####Tests:  [![Build Status](https://travis-ci.org/bjacobel/serenity.png)](https://travis-ci.org/bjacobel/serenity) 
 - Serenity is currently set up to test with Travis CI, but the eventual goal is to test Serenity with Serenity. Whoa, dude. 

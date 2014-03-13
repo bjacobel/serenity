@@ -55,7 +55,3 @@ test:
   all:
     - cd $NBITES_DIR/src/man && make straight && make test
     - cd $NBITES_DIR/src/tool && make straight && make test
-
-
-after_script:
-  - shutdown -h now
