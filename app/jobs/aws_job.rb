@@ -1,6 +1,7 @@
 require 'date'
+require 'capistrano/all'
 
-class AwsJob
+class AwsJob < Struct.new(:pull_request)
 
   def perform
 
@@ -20,16 +21,19 @@ class AwsJob
       @pkey = @ec2.key_pairs.create("serenity").private_key
     end
 
+    # Create a new Build object
+    @build = Build.new
+    @build.status = "requisitioning"
+    @build.output = "Bidding on an Amazon EC2 instance..."
+    @build.save()
 
     # request a spot instance
 
     request = @ec2.client.request_spot_instances({
-      #:dry_run => true,
       :spot_price => "0.0075",  # youtu.be/M8KrUWeBt_s
       :instance_count => 1,
       :type => "one-time",
-      :valid_from => DateTime.now.strftime("%Y-%m-%dT%H:%M:%S"),
-      :valid_until => DateTime.now.advance(:hours => 1).strftime("%Y-%m-%dT%H:%M:%S"), # wait up to an hour if neccesary
+      :valid_until => DateTime.now.advance(:hours => 1), # wait up to an hour if neccesary
       :launch_specification => {
         :key_name => "serenity",
         :image_id => "ami-a18c8fc8",  # will need to change this later to run on every ami the serenity.yml specifies 
@@ -42,18 +46,22 @@ class AwsJob
     loop do
       description = @ec2.client.describe_spot_instance_requests({:spot_instance_request_ids => [request[:spot_instance_request_set][0][:spot_instance_request_id]]})
       if description[:spot_instance_request_set][0][:state] == 'active'
-        return @ec2.instance.initialize(description[:spot_instance_request_set][0][:instance_id])
+        @instance = @ec2.instances[description[:spot_instance_request_set][0][:instance_id]]
       else
-        return nil
+        break
       end
     end
 
+    if @instance
 
 
-
-    # break it down
-
-    @instance.terminate
+      # break it down
+      @instance.terminate
+    else
+      @build.status("failed")
+      @build.output("Failed to get an EC2 instance.")
+      @build.save()
+    end
 
   end
 

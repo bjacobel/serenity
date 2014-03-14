@@ -1,5 +1,7 @@
 Serenity::Application.routes.draw do
-  root 'pull_request#index'
+  root 'build#index'
+
+
 
   post '/api/webhook.json', to: 'pull_request#new'
 

@@ -1,5 +1,5 @@
 class PullRequestController < ApplicationController
-skip_before_filter :verify_authenticity_token, only: [:new]
+  skip_before_filter :verify_authenticity_token, only: [:new]
 
   def index
     @pulls = PullRequest.all
@@ -19,6 +19,7 @@ skip_before_filter :verify_authenticity_token, only: [:new]
       raise Exception.new("Problem with the JSON; didn't find expected fields")
     else
       @pull.save()
+      Delayed::Job.enqueue AwsJob.new(@pull)
     end
   end
 end

@@ -1,0 +1,6 @@
+table#pulls
+    - for build in @builds
+        tr
+            td = build.id
+            td = build.status
+            td = build.output
