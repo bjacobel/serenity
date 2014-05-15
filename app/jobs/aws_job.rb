@@ -1,5 +1,4 @@
 require 'date'
-require 'capistrano/all'
 
 class AwsJob < Struct.new(:pull_request)
 
@@ -12,19 +11,28 @@ class AwsJob < Struct.new(:pull_request)
       :secret_access_key => Figaro.env.aws_key_secret
     )
 
-    begin
-      @pkey = @ec2.key_pairs.create("serenity").private_key
-    rescue AWS::EC2::Errors::InvalidKeyPair::Duplicate
-      # 'serenity' keypair already exists, so destroy it and make a new one
-      # this might be a problem if more than one PR is being processed at a time? We'll see
-      @ec2.key_pairs['serenity'].delete()
-      @pkey = @ec2.key_pairs.create("serenity").private_key
+    # this will wipe out the current key every time I switch from running dev to prod
+    # but should do a good job of keeping the key both secret and known in prod
+    if ENV['AWS_PKEY']
+      @pkey = ENV['AWS_PKEY']
+    else
+      begin
+        @pkey = @ec2.key_pairs.create("serenity").private_key
+      rescue AWS::EC2::Errors::InvalidKeyPair::Duplicate
+        # 'serenity' keypair already exists, so destroy it and make a new one
+        @ec2.key_pairs['serenity'].delete()
+        @pkey = @ec2.key_pairs.create("serenity").private_key
+      end
+
+      ENV['AWS_PKEY'] = @pkey
     end
+
+    # make the key available to 
 
     # Create a new Build object
     @build = Build.new
-    @build.status = "requisitioning"
-    @build.output = "Bidding on an Amazon EC2 instance..."
+    @build.status = "provisioning"
+    @build.output = "Provisioning an Amazon EC2 instance..."
     @build.save()
 
     # request a spot instance
@@ -53,13 +61,17 @@ class AwsJob < Struct.new(:pull_request)
     end
 
     if @instance
+      @build.status = "bootstrapping"
+      @build.save()
+
+      
 
 
       # break it down
       @instance.terminate
     else
-      @build.status("failed")
-      @build.output("Failed to get an EC2 instance.")
+      @build.status = "failed"
+      @build.output += "Failed to get an EC2 instance."
       @build.save()
     end
 

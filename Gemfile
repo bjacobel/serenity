@@ -70,8 +70,4 @@ gem 'foreman', group: :production
 # Set up a queue for delayed jobs
 gem 'delayed_job_active_record'
 
-# capistrano for programatically managing the AWS instance
-gem 'capistrano', '~> 3.1.0'
-gem 'cap-ec2', '~> 0.0.9'
-
 ruby '2.0.0'
