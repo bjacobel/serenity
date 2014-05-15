@@ -19,6 +19,7 @@ class PullRequestController < ApplicationController
       raise Exception.new("Problem with the JSON; didn't find expected fields")
     else
       @pull.save()
+
       Delayed::Job.enqueue AwsJob.new(@pull)
     end
   end

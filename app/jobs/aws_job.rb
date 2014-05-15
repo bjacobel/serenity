@@ -1,4 +1,5 @@
 require 'date'
+require 'rye'
 
 class AwsJob < Struct.new(:pull_request)
 
@@ -44,7 +45,7 @@ class AwsJob < Struct.new(:pull_request)
       :valid_until => DateTime.now.advance(:hours => 1), # wait up to an hour if neccesary
       :launch_specification => {
         :key_name => "serenity",
-        :image_id => "ami-a18c8fc8",  # will need to change this later to run on every ami the serenity.yml specifies 
+        :image_id => "ami-a18c8fc8",
         :instance_type => "m1.small",
       },
     })
@@ -52,11 +53,18 @@ class AwsJob < Struct.new(:pull_request)
     # wait until the instance has been requisitioned and booted
 
     loop do
-      description = @ec2.client.describe_spot_instance_requests({:spot_instance_request_ids => [request[:spot_instance_request_set][0][:spot_instance_request_id]]})
-      if description[:spot_instance_request_set][0][:state] == 'active'
-        @instance = @ec2.instances[description[:spot_instance_request_set][0][:instance_id]]
-      else
-        break
+      begin
+        description = @ec2.client.describe_spot_instance_requests({:spot_instance_request_ids => [request[:spot_instance_request_set][0][:spot_instance_request_id]]})
+        if description[:spot_instance_request_set][0][:state] == 'active'
+          @instance = @ec2.instances[description[:spot_instance_request_set][0][:instance_id]]
+          break
+        elsif description[:spot_instance_request_set][0][:state] == 'open'
+          next
+        else
+          break
+        end
+      rescue AWS::EC2::Errors::InvalidSpotInstanceRequestID::NotFound => e  # Amazon doesn't even know about the spot instance request yet
+        next
       end
     end
 
@@ -64,7 +72,27 @@ class AwsJob < Struct.new(:pull_request)
       @build.status = "bootstrapping"
       @build.save()
 
+      loop do
+        if @instance.status == "running"
+          break
+        else
+          next
+        end
+      end
+
+      # Write the private key out to file, feed it to Rye, then immediately delete it
+      # (This is due to Rye accepting only filepaths to keys rather than their raw content)
+      f = "/tmp/awspkey.pem"
+      File.open(f, 'w') { |file| file.write(@pkey) }
       
+      rbox = Rye::Box.new(host=@instance.private_ip_address)
+
+      rbox.add_keys([f])
+      File.delete(f)
+
+      rbox.switch_user('ubuntu')
+
+      $stderr.puts rbox.uptime
 
 
       # break it down

@@ -70,4 +70,7 @@ gem 'foreman', group: :production
 # Set up a queue for delayed jobs
 gem 'delayed_job_active_record'
 
+# Execute SSH commands on EC2
+gem 'rye', '0.9.12'
+
 ruby '2.0.0'
